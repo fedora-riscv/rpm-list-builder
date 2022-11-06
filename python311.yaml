@@ -15,6 +15,7 @@ python311:
         macros:
           _with_bootstrap: 1
           _without_tests: 1
+          _without_main_python: 1
     - python-railroad-diagrams
     - pyparsing: # bump release
         macros:
@@ -647,13 +648,13 @@ python311:
     - python-sphinxcontrib-bibtex
     - python-scour
     - python-pytest-rerunfailures
-    - python-readthedocs-sphinx-ext
+    # - python-readthedocs-sphinx-ext # dead in fedora 37
     # - python-sphinx_rtd_theme  # testfull, not blocking
     - python-jupyter-client:
         macros:
           _without_doc: 1
           _without_tests: 1
-    - sip5
+    # - sip5 # dead in fedora 37
     - python-wxpython4
     - python-matplotlib:
         macros:
@@ -699,7 +700,7 @@ python311:
     - python-pyramid
     - python-cornice
     - python-cornice-sphinx
-    - python3-pytest-asyncio
+    # - python3-pytest-asyncio: # dead in fedora 37
     - python-asgiref
     - kobo
     - python-moksha-common
@@ -756,7 +757,7 @@ python311:
     - python-vine
     - python-case
     - python-amqp
-    - python-nose-cover3
+    # - python-nose-cover3 # dead in fedora 37
     - python-billiard
     - python-kombu
     - python-msgpack
