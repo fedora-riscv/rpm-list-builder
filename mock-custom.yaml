@@ -1,0 +1,13 @@
+download:
+  - echo 'Download sources repo'
+  - |
+    [ -d $PWD/$PKG ] || git clone https://src.fedoraproject.org/rpms/$PKG.git
+before_build:
+  - mock -r fedora-37-riscv64 --scrub=all
+build:
+  - git checkout rawhide; fedpkg sources
+  - mock -r fedora-37-riscv64 -n --spec=$PWD/$PKG.spec --source=$PWD
+  - mv -vf /var/lib/mock/fedora-37-riscv64/result/*.src.rpm /mnt/nfs/data-exchange/http-shared/python-bootstrap/src/Packages/
+  - mv -vf /var/lib/mock/fedora-37-riscv64/result/*.rpm /mnt/nfs/data-exchange/http-shared/python-bootstrap/riscv64/Packages/
+  - createrepo -v --update /mnt/nfs/data-exchange/http-shared/python-bootstrap/src
+  - createrepo -v --update /mnt/nfs/data-exchange/http-shared/python-bootstrap/riscv64
