@@ -62,11 +62,21 @@ perl536:
     - perl-Test-NoWarnings:
         macros:
           _without_perl_Test_NoWarnings_enables_stack_trace: 1
-    - perl-Devel-Symdump
+    - perl-Devel-Symdump:
+        macros:
+          perl_bootstrap: 1
     - perl-Pod-Coverage
     - perl-Test-Pod-Coverage
+    - perl-Tie-IxHash
+    - perl-common-sense
+    - perl-Types-Serialiser
+    - perl-Canary-Stability
+    - perl-JSON-XS
+    - perl-JSON
+    - perl-Test-CPAN-Meta:
+        macros:
+          perl_bootstrap: 1
     - perl-Test-CPAN-Meta-JSON 
-    - perl-Test-CPAN-Meta
     - perl-Compress-Raw-Bzip2:
         macros:
           _without_perl_Compress_Raw_Bzip2_enables_optional_test: 1
@@ -87,6 +97,11 @@ perl536:
         macros:
           _without_perl_CPAN_Meta_Requirements_enables_optional_test: 1
     - perl-perlfaq
+    - perl-HTML-Tagset
+    - perl-File-Slurper
+    - perl-IO-Compress-Brotli
+    - perl-HTTP-Message
+    - perl-HTML-Parser
     - perltidy
     - perl-Test-Harness:
         macros:
@@ -229,7 +244,6 @@ perl536:
         macros:
           _without_perl_Devel_PPPort_enables_optional_test: 1
     - perl-Digest
-    - perl-HTML-Tagset
     - perl-Text-ParseWords
     - perl-Class-Inspector
     - perl-CPAN:
@@ -327,10 +341,8 @@ perl536:
     - perl-DynaLoader-Functions
     - perl-WWW-RobotRules
     - perl-Unicode-UTF8
-    - perl-HTML-Parser
     - perl-DBD-MySQL
     - perl-Net-HTTP
-    - perl-HTTP-Message
     - perl-Devel-CallChecker
     - perl-Eval-Closure
     - perl-Path-Tiny
